@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Buscador Spotify</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Configuración</string>
+    <string name="welcome_text">Buscador de álbumes</string>
+    <string name="welcome_text_footer">Ingresa el nombre del artista a buscar</string>
+
+</resources>

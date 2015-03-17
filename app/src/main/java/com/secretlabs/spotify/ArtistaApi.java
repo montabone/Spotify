@@ -3,6 +3,7 @@ package com.secretlabs.spotify;
 /**
  * Created by Mirko on 17-03-2015.
  */
+
 import android.content.Context;
 
 import org.apache.http.HttpResponse;
@@ -10,6 +11,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -34,18 +36,29 @@ public class ArtistaApi {
                             @Override
                             public Artista call() throws Exception {
                                 Artista artista = null;
+
                                 String nombreArtistaFinal = nombreArtista.replace(" ", "+");
                                 String respStr = requestGET("http://ws.spotify.com/search/1/album.json?q="+nombreArtistaFinal);
 
                                 JSONObject respJSON = new JSONObject(respStr);
+
                                 try {
-                                    JSONObject artist = respJSON.getJSONObject("albums");
 
-                                    String nombre = artist.getString("name");
-                                    String descripcion = artist.getJSONObject("artists").getString("name");
-                                    String popularity = artist.getString("popularity");
-                                    artista = new Artista(nombre, descripcion, popularity);
+                                    //Objeto nombre del artístca
+                                    JSONObject artist = respJSON.getJSONObject("info");
 
+
+                                    String nombre = artist.getString("query");
+
+                                    //Array albumes
+
+                                    JSONArray albumes = respJSON.getJSONArray("albums");
+
+
+                                    for (int i=0; i<albumes.length(); i++) {
+                                        String descripcion = albumes.getJSONObject(i).getString("name");
+                                        artista = new Artista(nombre, descripcion);
+                                    }
 
                                 } catch (JSONException e) {
                                     e.printStackTrace();

@@ -7,19 +7,16 @@ public class Artista {
 
     String nombre;
     String descripcion;
-    String popularity;
-
 
 
     public Artista() {
         super();
     }
 
-    public Artista(String nombre, String descripcion, String popularity) {
+    public Artista(String nombre, String descripcion) {
         super();
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.popularity = popularity;
     }
 
     public String getNombre() {
@@ -36,14 +33,6 @@ public class Artista {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
-
-    public String getPopularity() {
-        return popularity;
-    }
-
-    public void setPopularity(String popularity) {
-        this.popularity = popularity;
     }
 
 

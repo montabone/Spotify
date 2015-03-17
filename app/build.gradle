@@ -19,6 +19,20 @@ android {
     }
 }
 
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.google.code.gson:gson:2.3'
+    compile 'com.android.support:cardview-v7:+'
+    compile 'com.android.support:recyclerview-v7:+'
+    compile 'net.schmizz:sshj:0.10.0'
+    compile 'com.spotify.sdk:spotifysdk:1.0.0-beta8@aar' // NOTE: Version must match!
+   /* compile files ('libs/spotifysdk-1.0.0-beta8.a/ar')*/ // NOTE: Version must match!
+
 }

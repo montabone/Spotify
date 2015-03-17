@@ -2,9 +2,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/primary_dark"
     tools:context=".MainActivity">
 
-
+    <!--
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,7 +15,7 @@
 
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
-
+    -->
     <!--<ImageButton
         android:layout_width="56dp"
         android:layout_height="56dp"
@@ -24,7 +25,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="50dp" />-->
-
+    <!--
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,6 +33,7 @@
         android:textColor="#FFF"
         android:text="Buscar"
         android:id="@+id/button"
+        android:onClick="buscar"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="79dp" />
@@ -43,6 +45,65 @@
         android:hint="@string/placeholder_buscador"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />-->
+
+    <TextView
+        android:textColor="#FEFEFE"
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:layout_marginTop="8dp"
+        android:text="Introduzca el nombre del artista:" />
+
+    <EditText
+        android:id="@+id/buscarArtista"
+        android:textColor="#FEFEFE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView1"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:background="@color/accent"
+        android:textColor="#FFF"
+        android:id="@+id/buscar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buscar"
+        android:layout_below="@+id/buscarArtista"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/nombreArtista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buscar"
+        android:layout_below="@+id/buscar"
+        android:layout_marginTop="24dp"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/descripcionArtista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/nombreArtista"
+        android:layout_below="@+id/nombreArtista"
+        android:text="" />
 
 
 </RelativeLayout>
